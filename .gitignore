@@ -2,6 +2,8 @@
 build/
 bin/
 obj/
+CMakeCache.txt
+CMakeFiles/
 
 # Compiled files
 *.o
@@ -14,6 +16,7 @@ obj/
 *.swp
 *.swo
 *.save
+*~
 
 # Logs
 *.log
