@@ -1,10 +1,10 @@
-
 # Student Information System
 
 This project is developed as part of the System Programming course.
-It is a simple Student Information System running on Docker containers.
+It is a simple command-line based Student Information System that runs using Docker containers.
 
 ## Technologies Used
+
 - Ubuntu
 - C++
 - PostgreSQL
@@ -12,22 +12,25 @@ It is a simple Student Information System running on Docker containers.
 - Git & GitHub
 
 ## System Architecture
-The system consists of two main containers:
+
+The system consists of two main Docker containers:
+
 - PostgreSQL database container
 - C++ application container
 
 ## Features
+
 - Add student information
 - List students
 - Update student information
 - Delete student information
 
 ## How to Run
-Please see INSTALL.md for setup instructions.
+
+Please see the `INSTALL.md` file for setup instructions.
 
 ## Team Roles
-- Git & GitHub Management & Documentation (Emre Kubilay)
-- Docker & DevOps Engineer(Hilal Bizimyer)
-- C++ Developer (Ezgi Erdoğan)
 
-
+- Git & GitHub Management & Documentation: Emre Kubilay  
+- Docker & DevOps Engineer: Hilal Bizimyer  
+- C++ Developer: Ezgi Erdoğan
