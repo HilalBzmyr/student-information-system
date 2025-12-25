@@ -16,6 +16,6 @@ COPY CMakeLists.txt ./
 COPY src ./src
 COPY include ./include
 
-RUN cmake -S . -B build && cmake --build build -j
+RUN cmake -S . -B build -DBUILD_TESTS=OFF && cmake --build build -j
 
 CMD ["./build/sis_app"]

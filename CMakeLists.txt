@@ -32,15 +32,20 @@ target_link_libraries(sis_app
     PRIVATE sis_core
 )
 
-# Tests
-enable_testing()
 
-add_executable(test_basic
-    tests/test_basic.cpp
-)
+# Tests (optional)
+option(BUILD_TESTS "Build tests" ON)
 
-target_link_libraries(test_basic
-    PRIVATE sis_core
-)
+if(BUILD_TESTS)
+    enable_testing()
 
-add_test(NAME basic_test COMMAND test_basic)
+    add_executable(test_basic
+        tests/test_basic.cpp
+    )
+
+    target_link_libraries(test_basic
+        PRIVATE sis_core
+    )
+
+    add_test(NAME basic_test COMMAND test_basic)
+endif()
