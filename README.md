@@ -31,8 +31,8 @@ Please see the `INSTALL.md` file for setup instructions.
 Docker (Week 2)
 
 The application is containerized using Docker and orchestrated with Docker Compose. The PostgreSQL database and the C++ application run in separate containers and communicate over a Docker network. Public Docker Hub images are available for both services: hilalb/sis-app:week2 for the C++ application and hilalb/sis-db:week2 for the PostgreSQL database. To run the system locally, create an environment file using .env.example, start the database container, verify the database connection with a simple query, and then build and run the application container.
-- App Image: https://hub.docker.com/r/hilalb/sis-app
-- DB Image: https://hub.docker.com/r/hilalb/sis-db
+- App Image: https://hub.docker.com/r/hilalb/student-information-system-app
+- DB Image: https://hub.docker.com/r/hilalb/student-information-system-postgres
 ```bash
 cp .env.example .env
 docker compose up -d db
