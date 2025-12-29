@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.db
-    image: hilalb/sis-db:week2
+    image: hilalb/student-information-system-postgres:latest
     container_name: sis-db
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-sis}
@@ -25,7 +25,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: hilalb/sis-app:week2
+    image: hilalb/student-information-system-app:latest
     container_name: sis-app
     depends_on:
       db:
