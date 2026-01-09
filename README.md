@@ -45,21 +45,6 @@ The containers communicate over a **private Docker network** defined in `docker-
 
 ---
 
-## Project Structure
-.
-├── src/                # C++ source files
-├── include/            # Header files
-├── tests/              # Unit tests
-├── Dockerfile          # Application container
-├── Dockerfile.db       # Database container (if customized)
-├── docker-compose.yml  # Multi-container orchestration
-├── CMakeLists.txt      # Build configuration
-├── README.md
-├── INSTALL.md
-├── MANUAL.md
-└── .github/workflows   # CI/CD pipelines
----
-
 ## How to Run
 
 Please see the **INSTALL.md** file for detailed installation and execution instructions.
