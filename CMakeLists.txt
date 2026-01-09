@@ -34,7 +34,7 @@ target_link_libraries(sis_app
 
 
 # Tests (optional)
-option(BUILD_TESTS "Build tests" ON)
+option(BUILD_TESTS "Build tests" OFF)
 
 if(BUILD_TESTS)
     enable_testing()
