@@ -24,3 +24,6 @@ CMakeFiles/
 # Temporary files
 tmp/
 temp/
+
+.env
+
