@@ -32,6 +32,10 @@ target_link_libraries(sis_app
     sis_core
     ${PQXX_LIBRARIES}
 )
+
+
+
+# Tests (optional)
 option(BUILD_TESTS "Build tests" OFF)
 
 if(BUILD_TESTS)
