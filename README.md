@@ -1,41 +1,90 @@
 # Student Information System
-This project is developed as part of the System Programming course.
-It is a simple command-line based Student Information System that runs using Docker containers.
+
+This project is developed as part of the **System Programming** course.  
+It is a **command-line based Student Information System** implemented in **C++**, running on **Docker containers**, and using **PostgreSQL** as the database.
+
+The project focuses on system programming concepts such as containerization, database connectivity, modular C++ design, CI/CD, and collaborative development using GitHub.
+
+---
 
 ## Technologies Used
 - Ubuntu
-- C++
+- C++ (C++17)
 - PostgreSQL
 - Docker & Docker Compose
 - Git & GitHub
+- libpqxx (PostgreSQL C++ client library)
+
+---
 
 ## System Architecture
-The system consists of two main Docker containers:
-- PostgreSQL database container
-- C++ application container
+
+The system consists of **two main Docker containers**:
+
+1. **PostgreSQL Database Container**
+   - Stores student information persistently using Docker volumes
+
+2. **C++ Application Container**
+   - Command-line interface (CLI)
+   - Connects to PostgreSQL using `libpqxx`
+   - Performs CRUD operations
+
+The containers communicate over a **private Docker network** defined in `docker-compose.yml`.
+
+---
 
 ## Features
-- Add student information
-- List students
+
+- Add student information  
+  (ID, name, surname, department, email)
+- List all students
 - Update student information
 - Delete student information
+- Database transaction management
+- Error handling and input validation
+
+---
+
+## Project Structure
+.
+├── src/                # C++ source files
+├── include/            # Header files
+├── tests/              # Unit tests
+├── Dockerfile          # Application container
+├── Dockerfile.db       # Database container (if customized)
+├── docker-compose.yml  # Multi-container orchestration
+├── CMakeLists.txt      # Build configuration
+├── README.md
+├── INSTALL.md
+├── MANUAL.md
+└── .github/workflows   # CI/CD pipelines
+---
 
 ## How to Run
-Please see the `INSTALL.md` file for setup instructions.
 
-## Team Roles
-- Git & GitHub Management & Documentation: Emre Kubilay  
-- Docker & DevOps Engineer: Hilal Bizimyer  
-- C++ Developer: Ezgi Erdoğan
+Please see the **INSTALL.md** file for detailed installation and execution instructions.
 
-Docker (Week 2)
+---
 
-The application is containerized using Docker and orchestrated with Docker Compose. The PostgreSQL database and the C++ application run in separate containers and communicate over a Docker network. Public Docker Hub images are available. To run the system locally, create an environment file using .env.example, start the database container, verify the database connection with a simple query, and then build and run the application container.
-- App Image: https://hub.docker.com/r/hilalb/student-information-system-app
-- DB Image: https://hub.docker.com/r/hilalb/student-information-system-postgres
+## Docker Images (Public)
+
+All Docker images are publicly available on **Docker Hub** as required by the course guidelines.
+
+### Application Images
+- **C++ Application (Ezgi Erdoğan)**  
+  https://hub.docker.com/r/ezgierdoganfbu/sis-project-app
+
+- **C++ Application (Emre Kubilay)**  
+  https://hub.docker.com/r/emrekubi/student-app
+
+### Database Image
+- **PostgreSQL Database**  
+  https://hub.docker.com/r/hilalb/student-information-system-postgres
+
+---
+
+## Example Usage (Docker)
+
 ```bash
 cp .env.example .env
-docker compose up -d db
-docker exec -it sis-db psql -U sis_user -d sis -c "SELECT 1;"
-docker compose up --build app
-```
+docker compose up -d
